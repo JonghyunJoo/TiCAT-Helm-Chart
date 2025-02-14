@@ -1,0 +1,10 @@
+concert:
+  enabled: true
+  replicas: 1
+  ports:
+    - name: concert
+      port: 80
+      targetPort: 8002
+  image:
+    repository: jonghyunjoo1235/concert-service
+    tag: 1.0

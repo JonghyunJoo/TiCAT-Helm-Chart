@@ -1,0 +1,8 @@
+apiVersion: v2
+name: concert-chart
+version: 1.0.0
+appVersion: 1.0.0
+description: Sprig-Cloud-ConcertReservation Concert Helm Chart
+maintainers:
+  - name: Jonghyun Joo
+    email: j3261221@gmail.com

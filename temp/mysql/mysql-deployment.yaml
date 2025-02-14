@@ -1,0 +1,204 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mysql-user-deployment
+  namespace: mysql-user-ns
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: mysql-user
+  template:
+    metadata:
+      labels:
+        app: mysql-user
+    spec:
+      containers:
+        - name: mysql
+          image: mysql:8.0
+          env:
+            - name: MYSQL_ROOT_PASSWORD
+              valueFrom:
+                configMapKeyRef:
+                  name: mysql-config
+                  key: MYSQL_ROOT_PASSWORD
+          ports:
+            - containerPort: 3306
+          volumeMounts:
+            - name: mysql-storage
+              mountPath: /var/lib/mysql
+      volumes:
+        - name: mysql-storage
+          persistentVolumeClaim:
+            claimName: mysql-user-pvc
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mysql-concert-deployment
+  namespace: mysql-concert-ns
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: mysql-concert
+  template:
+    metadata:
+      labels:
+        app: mysql-concert
+    spec:
+      containers:
+        - name: mysql
+          image: mysql:8.0
+          env:
+            - name: MYSQL_ROOT_PASSWORD
+              valueFrom:
+                configMapKeyRef:
+                  name: mysql-config
+                  key: MYSQL_ROOT_PASSWORD
+          ports:
+            - containerPort: 3306
+          volumeMounts:
+            - name: mysql-storage
+              mountPath: /var/lib/mysql
+      volumes:
+        - name: mysql-storage
+          persistentVolumeClaim:
+            claimName: mysql-concert-pvc
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mysql-seat-deployment
+  namespace: mysql-seat-ns
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: mysql-seat
+  template:
+    metadata:
+      labels:
+        app: mysql-seat
+    spec:
+      containers:
+        - name: mysql
+          image: mysql:8.0
+          env:
+            - name: MYSQL_ROOT_PASSWORD
+              valueFrom:
+                configMapKeyRef:
+                  name: mysql-config
+                  key: MYSQL_ROOT_PASSWORD
+          ports:
+            - containerPort: 3306
+          volumeMounts:
+            - name: mysql-storage
+              mountPath: /var/lib/mysql
+      volumes:
+        - name: mysql-storage
+          persistentVolumeClaim:
+            claimName: mysql-seat-pvc
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mysql-payment-deployment
+  namespace: mysql-payment-ns
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: mysql-payment
+  template:
+    metadata:
+      labels:
+        app: mysql-payment
+    spec:
+      containers:
+        - name: mysql
+          image: mysql:8.0
+          env:
+            - name: MYSQL_ROOT_PASSWORD
+              valueFrom:
+                configMapKeyRef:
+                  name: mysql-config
+                  key: MYSQL_ROOT_PASSWORD
+          ports:
+            - containerPort: 3306
+          volumeMounts:
+            - name: mysql-storage
+              mountPath: /var/lib/mysql
+      volumes:
+        - name: mysql-storage
+          persistentVolumeClaim:
+            claimName: mysql-payment-pvc
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mysql-reservation-deployment
+  namespace: mysql-reservation-ns
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: mysql-reservation
+  template:
+    metadata:
+      labels:
+        app: mysql-reservation
+    spec:
+      containers:
+        - name: mysql
+          image: mysql:8.0
+          env:
+            - name: MYSQL_ROOT_PASSWORD
+              valueFrom:
+                configMapKeyRef:
+                  name: mysql-config
+                  key: MYSQL_ROOT_PASSWORD
+          ports:
+            - containerPort: 3306
+          volumeMounts:
+            - name: mysql-storage
+              mountPath: /var/lib/mysql
+      volumes:
+        - name: mysql-storage
+          persistentVolumeClaim:
+            claimName: mysql-reservation-pvc
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mysql-wallet-deployment
+  namespace: mysql-wallet-ns
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: mysql-wallet
+  template:
+    metadata:
+      labels:
+        app: mysql-wallet
+    spec:
+      containers:
+        - name: mysql
+          image: mysql:8.0
+          env:
+            - name: MYSQL_ROOT_PASSWORD
+              valueFrom:
+                configMapKeyRef:
+                  name: mysql-config
+                  key: MYSQL_ROOT_PASSWORD
+          ports:
+            - containerPort: 3306
+          volumeMounts:
+            - name: mysql-storage
+              mountPath: /var/lib/mysql
+      volumes:
+        - name: mysql-storage
+          persistentVolumeClaim:
+            claimName: mysql-wallet-pvc
+---

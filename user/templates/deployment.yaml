@@ -1,0 +1,67 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: user-deployment
+spec:
+  replicas: {{ .Values.user.replicas }}
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxSurge: 25%
+      maxUnavailable: 25%
+  selector:
+    matchLabels:
+      app: user
+  template:
+    metadata:
+      labels:
+        app: user
+    spec:
+      containers:
+        - name: user
+          image: {{ .Values.user.image.repository }}:{{ .Values.user.image.tag }}
+          # resources:
+          #   requests:
+          #     cpu: "100m"
+          #     memory: "300Mi"
+          #   limits:
+          #     cpu: "500m"
+          #     memory: "1024Mi"
+          env:
+            - name: DATABASE_USERNAME
+              valueFrom:
+                secretKeyRef:
+                  name: user-app-secrets
+                  key: database.username
+            - name: DATABASE_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: user-app-secrets
+                  key: database.password
+            - name: DATABASE_URL
+              valueFrom:
+                secretKeyRef:
+                  name: user-app-secrets
+                  key: database.url
+            - name: DATABASE_PORT
+              valueFrom:
+                secretKeyRef:
+                  name: user-app-secrets
+                  key: database.port
+            - name: DATABASE_USER_DB_NAME
+              valueFrom:
+                secretKeyRef:
+                  name: user-app-secrets
+                  key: database.dbName
+            - name: REDIS_HOST
+              valueFrom:
+                secretKeyRef:
+                  name: user-app-secrets
+                  key: redis.host
+            - name: REDIS_PORT
+              valueFrom:
+                secretKeyRef:
+                  name: user-app-secrets
+                  key: redis.port
+          ports:
+            - containerPort: {{ (index .Values.user.ports 0).port }}

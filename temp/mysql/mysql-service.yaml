@@ -1,0 +1,83 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: mysql-user-service
+  namespace: mysql-user-ns
+spec:
+  selector:
+    app: mysql-user
+  ports:
+    - protocol: TCP
+      port: 3306
+      targetPort: 3306
+  type: LoadBalancer
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: mysql-concert-service
+  namespace: mysql-concert-ns
+spec:
+  selector:
+    app: mysql-concert
+  ports:
+    - protocol: TCP
+      port: 3306
+      targetPort: 3306
+  type: LoadBalancer
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: mysql-payment-service
+  namespace: mysql-payment-ns
+spec:
+  selector:
+    app: mysql-payment
+  ports:
+    - protocol: TCP
+      port: 3306
+      targetPort: 3306
+  type: LoadBalancer
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: mysql-seat-service
+  namespace: mysql-seat-ns
+spec:
+  selector:
+    app: mysql-seat
+  ports:
+    - protocol: TCP
+      port: 3306
+      targetPort: 3306
+  type: LoadBalancer
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: mysql-reservation-service
+  namespace: mysql-reservation-ns
+spec:
+  selector:
+    app: mysql-reservation
+  ports:
+    - protocol: TCP
+      port: 3306
+      targetPort: 3306
+  type: LoadBalancer
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: mysql-wallet-service
+  namespace: mysql-wallet-ns
+spec:
+  selector:
+    app: mysql-wallet
+  ports:
+    - protocol: TCP
+      port: 3306
+      targetPort: 3306
+  type: LoadBalancer
