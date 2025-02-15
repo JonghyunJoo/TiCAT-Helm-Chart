@@ -15,4 +15,6 @@ ingress:
   annotations:
     kubernetes.io/ingress.class: nginx
   hosts:
-    host: nginx-ingress-ingress-nginx-controller.ingress-nginx.svc.cluster.local
+    - host: nginx-ingress-ingress-nginx-controller.ingress-nginx.svc.cluster.local
+      paths:
+        - /
