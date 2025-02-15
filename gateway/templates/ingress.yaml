@@ -9,9 +9,9 @@ metadata:
 spec:
   tls:
     - hosts:
-        - {{ .Values.ingress.host }}
+        - {{ .Values.ingress.hosts.host }}
   rules:
-    - host: {{ .Values.ingress.host }}
+    - host: {{ .Values.ingress.hosts.host }}
       http:
         paths:
           - path: /
