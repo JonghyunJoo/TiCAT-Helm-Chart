@@ -3,7 +3,7 @@ replicaCount: 2
 image:
   repository: jonghyunjoo1235/apigateway-service
   pullPolicy: IfNotPresent
-  tag: 1.0.0
+  tag: 13
 
 service:
   type: ClusterIP
@@ -15,6 +15,6 @@ ingress:
   annotations:
     kubernetes.io/ingress.class: nginx
   hosts:
-    - host: 34.84.244.202
+    - host: 34.146.24.141
       paths:
         - /
