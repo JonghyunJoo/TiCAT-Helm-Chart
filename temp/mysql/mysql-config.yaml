@@ -4,4 +4,4 @@ metadata:
   name: mysql-config
   namespace: mysql-common-ns
 data:
-  MYSQL_ROOT_PASSWORD: root
+  MYSQL_ROOT_PASSWORD: "root"
