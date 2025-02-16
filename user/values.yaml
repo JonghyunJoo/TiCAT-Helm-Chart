@@ -9,6 +9,7 @@ user:
     repository: jonghyunjoo1235/user-service
     tag: 1
 
-  database.username: root
-  database.password: root
-  database.url: mysql-user-service.mysql-user-ns.svc.cluster.local:3306
+  database:
+    username: root
+    password: root
+    url: mysql-user-service.mysql-user-ns.svc.cluster.local:3306
