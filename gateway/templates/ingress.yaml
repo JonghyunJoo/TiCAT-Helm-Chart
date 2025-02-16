@@ -16,8 +16,3 @@ spec:
                 name: gateway-service
                 port:
                   number: 8080
-
-status:
-  loadBalancer:
-    ingress:
-      - ip: 34.118.233.132
