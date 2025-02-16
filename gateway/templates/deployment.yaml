@@ -21,7 +21,6 @@ spec:
         - name: gateway
           image: {{ .Values.image.repository }}:{{ .Values.image.tag }}
           imagePullPolicy: {{ .Values.image.pullPolicy }}
-          env:
           ports:
             - name: http
               containerPort: {{ .Values.service.port }}
