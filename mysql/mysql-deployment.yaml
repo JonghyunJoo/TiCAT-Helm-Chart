@@ -19,8 +19,8 @@ spec:
           env:
             - name: MYSQL_ROOT_PASSWORD
               valueFrom:
-                configMapKeyRef:
-                  name: mysql-config
+                secretKeyRef:
+                  name: mysql-secret
                   key: MYSQL_ROOT_PASSWORD
           ports:
             - containerPort: 3306
@@ -53,8 +53,8 @@ spec:
           env:
             - name: MYSQL_ROOT_PASSWORD
               valueFrom:
-                configMapKeyRef:
-                  name: mysql-config
+                secretKeyRef:
+                  name: mysql-secret
                   key: MYSQL_ROOT_PASSWORD
           ports:
             - containerPort: 3306
@@ -87,8 +87,8 @@ spec:
           env:
             - name: MYSQL_ROOT_PASSWORD
               valueFrom:
-                configMapKeyRef:
-                  name: mysql-config
+                secretKeyRef:
+                  name: mysql-secret
                   key: MYSQL_ROOT_PASSWORD
           ports:
             - containerPort: 3306
@@ -121,8 +121,8 @@ spec:
           env:
             - name: MYSQL_ROOT_PASSWORD
               valueFrom:
-                configMapKeyRef:
-                  name: mysql-config
+                secretKeyRef:
+                  name: mysql-secret
                   key: MYSQL_ROOT_PASSWORD
           ports:
             - containerPort: 3306
@@ -155,8 +155,8 @@ spec:
           env:
             - name: MYSQL_ROOT_PASSWORD
               valueFrom:
-                configMapKeyRef:
-                  name: mysql-config
+                secretKeyRef:
+                  name: mysql-secret
                   key: MYSQL_ROOT_PASSWORD
           ports:
             - containerPort: 3306
@@ -189,8 +189,8 @@ spec:
           env:
             - name: MYSQL_ROOT_PASSWORD
               valueFrom:
-                configMapKeyRef:
-                  name: mysql-config
+                secretKeyRef:
+                  name: mysql-secret
                   key: MYSQL_ROOT_PASSWORD
           ports:
             - containerPort: 3306
@@ -201,4 +201,3 @@ spec:
         - name: mysql-storage
           persistentVolumeClaim:
             claimName: mysql-wallet-pvc
----
