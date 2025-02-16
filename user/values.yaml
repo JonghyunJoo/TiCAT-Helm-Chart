@@ -7,7 +7,7 @@ user:
       targetPort: 8000
   image:
     repository: jonghyunjoo1235/user-service
-    tag: 5
+    tag: 8
 
   database:
     username: root
