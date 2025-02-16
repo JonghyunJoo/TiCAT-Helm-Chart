@@ -1,0 +1,100 @@
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: mysql-user-pv
+  namespace: mysql-user-ns
+spec:
+  capacity:
+    storage: 5Gi
+  volumeMode: Filesystem
+  accessModes:
+    - ReadWriteOnce
+  persistentVolumeReclaimPolicy: Retain
+  storageClassName: standard
+  hostPath:
+    path: /mnt/data/mysql-user
+
+---
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: mysql-concert-pv
+  namespace: mysql-concert-ns
+spec:
+  capacity:
+    storage: 5Gi
+  volumeMode: Filesystem
+  accessModes:
+    - ReadWriteOnce
+  persistentVolumeReclaimPolicy: Retain
+  storageClassName: standard
+  hostPath:
+    path: /mnt/data/mysql-concert
+
+---
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: mysql-seat-pv
+  namespace: mysql-seat-ns
+spec:
+  capacity:
+    storage: 5Gi
+  volumeMode: Filesystem
+  accessModes:
+    - ReadWriteOnce
+  persistentVolumeReclaimPolicy: Retain
+  storageClassName: standard
+  hostPath:
+    path: /mnt/data/mysql-seat
+
+---
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: mysql-payment-pv
+  namespace: mysql-payment-ns
+spec:
+  capacity:
+    storage: 5Gi
+  volumeMode: Filesystem
+  accessModes:
+    - ReadWriteOnce
+  persistentVolumeReclaimPolicy: Retain
+  storageClassName: standard
+  hostPath:
+    path: /mnt/data/mysql-payment
+
+---
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: mysql-reservation-pv
+  namespace: mysql-reservation-ns
+spec:
+  capacity:
+    storage: 5Gi
+  volumeMode: Filesystem
+  accessModes:
+    - ReadWriteOnce
+  persistentVolumeReclaimPolicy: Retain
+  storageClassName: standard
+  hostPath:
+    path: /mnt/data/mysql-reservation
+
+---
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: mysql-wallet-pv
+  namespace: mysql-wallet-ns
+spec:
+  capacity:
+    storage: 5Gi
+  volumeMode: Filesystem
+  accessModes:
+    - ReadWriteOnce
+  persistentVolumeReclaimPolicy: Retain
+  storageClassName: standard
+  hostPath:
+    path: /mnt/data/mysql-wallet

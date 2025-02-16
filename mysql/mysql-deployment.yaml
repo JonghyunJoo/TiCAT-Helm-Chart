@@ -26,7 +26,7 @@ spec:
               valueFrom:
                 secretKeyRef:
                   name: mysql-secret
-                  key: MYSQL-DATABASE-NAME
+                  key: MYSQL_DATABASE_NAME
           ports:
             - containerPort: 3306
           volumeMounts:
@@ -65,7 +65,7 @@ spec:
               valueFrom:
                 secretKeyRef:
                   name: mysql-secret
-                  key: MYSQL-DATABASE-NAME
+                  key: MYSQL_DATABASE_NAME
           ports:
             - containerPort: 3306
           volumeMounts:
@@ -104,7 +104,7 @@ spec:
               valueFrom:
                 secretKeyRef:
                   name: mysql-secret
-                  key: MYSQL-DATABASE-NAME
+                  key: MYSQL_DATABASE_NAME
           ports:
             - containerPort: 3306
           volumeMounts:
@@ -143,7 +143,7 @@ spec:
               valueFrom:
                 secretKeyRef:
                   name: mysql-secret
-                  key: MYSQL-DATABASE-NAME
+                  key: MYSQL_DATABASE_NAME
           ports:
             - containerPort: 3306
           volumeMounts:
@@ -182,7 +182,7 @@ spec:
               valueFrom:
                 secretKeyRef:
                   name: mysql-secret
-                  key: MYSQL-DATABASE-NAME
+                  key: MYSQL_DATABASE_NAME
           ports:
             - containerPort: 3306
           volumeMounts:
@@ -221,7 +221,7 @@ spec:
               valueFrom:
                 secretKeyRef:
                   name: mysql-secret
-                  key: MYSQL-DATABASE-NAME
+                  key: MYSQL_DATABASE_NAME
           ports:
             - containerPort: 3306
           volumeMounts:
