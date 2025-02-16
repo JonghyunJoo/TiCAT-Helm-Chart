@@ -10,7 +10,7 @@ metadata:
 spec:
   tls:
     - hosts:
-        - conreserve.duckdns.org
+        - "conreserve.duckdns.org"
       secretName: harbor-com-tls
   rules:
     - host: conreserve.duckdns.org
