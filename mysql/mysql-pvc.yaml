@@ -8,7 +8,7 @@ spec:
     - ReadWriteOnce
   resources:
     requests:
-      storage: 15Gi
+      storage: 10Gi
   storageClassName: standard-rwo
 
 ---
@@ -22,7 +22,7 @@ spec:
     - ReadWriteOnce
   resources:
     requests:
-      storage: 15Gi
+      storage: 10Gi
   storageClassName: standard-rwo
 
 ---
@@ -36,7 +36,7 @@ spec:
     - ReadWriteOnce
   resources:
     requests:
-      storage: 15Gi
+      storage: 10Gi
   storageClassName: standard-rwo
 ---
 apiVersion: v1
@@ -49,7 +49,7 @@ spec:
     - ReadWriteOnce
   resources:
     requests:
-      storage: 15Gi
+      storage: 10Gi
   storageClassName: standard-rwo
 ---
 apiVersion: v1
@@ -62,7 +62,7 @@ spec:
     - ReadWriteOnce
   resources:
     requests:
-      storage: 15Gi
+      storage: 10Gi
   storageClassName: standard-rwo
 ---
 apiVersion: v1
@@ -75,5 +75,5 @@ spec:
     - ReadWriteOnce
   resources:
     requests:
-      storage: 15Gi
+      storage: 10Gi
   storageClassName: standard-rwo
