@@ -1,4 +1,11 @@
 apiVersion: networking.k8s.io/v1
+kind: IngressClass
+metadata:
+  name: nginx
+spec:
+  controller: example.com/ingress-controller
+---
+apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: gateway-ingress
@@ -6,6 +13,7 @@ metadata:
     kubernetes.io/ingress.class: nginx
   namespace: gateway-ns
 spec:
+  ingressClassName: nginx
   rules:
     - host: conreserve.duckdns.org
       http:
