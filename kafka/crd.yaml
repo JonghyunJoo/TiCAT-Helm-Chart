@@ -31,7 +31,6 @@ metadata:
 spec:
   kafka:
     version: 3.8.1
-    metadataVersion: 3.8-IV2
     replicas: 3
     listeners:
       - name: plain
