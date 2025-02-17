@@ -11,13 +11,26 @@ spec:
       process.roles: "broker,controller"
       node.id: 1
       controller.quorum.voters: "1@my-kafka-0:9093,2@my-kafka-1:9093,3@my-kafka-2:9093"
-      listeners: |
-        EXTERNAL://:9094
-        INTERNAL://:9092
-        CONTROLLER://:9093
-      advertised.listeners: |
-        EXTERNAL://my-kafka-0.kafka.svc.cluster.local:9094
-        INTERNAL://my-kafka-0.kafka.svc.cluster.local:9092
+      listeners:
+        - name: EXTERNAL
+          port: 9094
+          type: internal
+        - name: INTERNAL
+          port: 9092
+          type: internal
+        - name: CONTROLLER
+          port: 9093
+          type: internal
+      advertised.listeners:
+        - name: EXTERNAL
+          port: 9094
+          type: internal
+        - name: INTERNAL
+          port: 9092
+          type: internal
+        - name: CONTROLLER
+          port: 9093
+          type: internal
       listener.security.protocol.map: "INTERNAL:PLAINTEXT,EXTERNAL:PLAINTEXT,CONTROLLER:PLAINTEXT"
       inter.broker.listener.name: "INTERNAL"
       controller.listener.names: "CONTROLLER"
