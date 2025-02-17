@@ -17,7 +17,7 @@ spec:
         type: persistent-claim
         size: 5Gi
         deleteClaim: false
-        class: nfs-client
+        class: standard-rwo
         kraftMetadata: shared
 ---
 apiVersion: kafka.strimzi.io/v1beta2
