@@ -1,6 +1,4 @@
-# allback-helm-chart
-helm chart repository for k8s deployment of all back team
-
+# TiCAT-helm-chart
 
 1. Jenkins 에 Docker hub Credentials 등록
 2. Pipeline 에서 Docker hub에 image push 진행
